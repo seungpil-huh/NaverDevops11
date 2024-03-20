@@ -18,6 +18,7 @@ public class Ex10_ArraySearchStartsWith {
 		 * 검색할 이름은? Q
 		 * 		** 검색을 종료합니다 **
 		 */
+		
 		String[] members = {"강호동","한가인","유재석","이승민","강하나","손미나","이영자","박남정","한지혜","손창민"};
 		
 		Scanner sc = new Scanner(System.in);
@@ -39,7 +40,7 @@ public class Ex10_ArraySearchStartsWith {
 			
 			// 검색
 			for (int i = 0; i < members.length; i++) {
-				if (members[i].startsWith(searchName)) {
+				if (searchName.equals(members[i])) {
 					count++;
 					System.out.printf("\t%d 번째: %s\n", i+1, members[i]);
 				}
