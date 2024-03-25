@@ -1,0 +1,19 @@
+package day0325;
+
+// 상속
+class AA {
+	
+}
+
+class BB extends AA {
+
+}
+
+public class Ex4_Inheri {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -47,6 +47,7 @@ public class Ex3_ClassEmployee {
 			System.out.println((i + 1) + "\t" + em[i].getName() + "\t" + em[i].getPosition() + "\t" + 
 					em[i].getAge() + "\t" + em[i].getGibon() + "\t" + em[i].getSudang() + "\t" + em[i].getNetPay()); // netpay = gibon + sudang
 		}
+		
 	}
 
 }

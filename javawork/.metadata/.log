@@ -2143,3 +2143,23 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.lsp4e 1 0 2024-03-25 12:22:05.038
 !MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-03-25 14:28:02.481
+!MESSAGE Cannot read field "displayText" because the return value of "com.genuitec.copilot4eclipse.CompletionTracker.currentCompletion()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot read field "displayText" because the return value of "com.genuitec.copilot4eclipse.CompletionTracker.currentCompletion()" is null
+	at com.genuitec.copilot4eclipse.CompletionTracker.activateCompletion(Unknown Source)
+	at com.genuitec.copilot4eclipse.CopilotEditSession.focusOnCompletion(Unknown Source)
+	at com.genuitec.copilot4eclipse.CopilotEditSession.handleCompletionResult(Unknown Source)
+	at com.genuitec.copilot4eclipse.CompletionJob.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.genuitec.copilot4eclipse 4 0 2024-03-25 15:20:28.076
+!MESSAGE Cannot read field "displayText" because the return value of "com.genuitec.copilot4eclipse.CompletionTracker.currentCompletion()" is null
+!STACK 0
+java.lang.NullPointerException: Cannot read field "displayText" because the return value of "com.genuitec.copilot4eclipse.CompletionTracker.currentCompletion()" is null
+	at com.genuitec.copilot4eclipse.CompletionTracker.activateCompletion(Unknown Source)
+	at com.genuitec.copilot4eclipse.CopilotEditSession.focusOnCompletion(Unknown Source)
+	at com.genuitec.copilot4eclipse.CopilotEditSession.handleCompletionResult(Unknown Source)
+	at com.genuitec.copilot4eclipse.CompletionJob.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

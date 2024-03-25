@@ -1,0 +1,9 @@
+package day0325;
+
+public class SmartPhone {
+
+	public SmartPhone() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
