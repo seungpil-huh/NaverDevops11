@@ -7,11 +7,12 @@ class Member {
 	
 	// 생성자
 	Member() {
-		System.out.println("디폴트 생성자");
+		//System.out.println("디폴트 생성자");
 	}
 	
 	Member(String name) {
-		this.name = name;
+		//this.name = name;
+		this(name, "010-5392-8677", "서울");
 	}
 	
 	Member(String name, String hp) {
@@ -58,6 +59,7 @@ public class Ex10_ClassMunje {
 		System.out.println("이름: " + m.getName());
 		System.out.println("번호: " + m.getHp());
 		System.out.println("주소: " + m.getAddr());
+		System.out.println("=".repeat(20));
 	}
 
 	public static void main(String[] args) {
