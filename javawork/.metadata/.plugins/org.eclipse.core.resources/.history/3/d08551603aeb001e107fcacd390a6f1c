@@ -1,0 +1,15 @@
+package day0326;
+
+import java.util.Date;
+
+public class Ex14_Exception {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		public void go1() {
+			Date date = null;
+			System.out.println(date.getYear());
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+package day0326;
+
+import java.io.*;
+
+public class Ex15_FileException {
+	
+	static final String FILENAME = "C:/naver0314/memo1.txt"
+	
+	public static void fileSave() {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

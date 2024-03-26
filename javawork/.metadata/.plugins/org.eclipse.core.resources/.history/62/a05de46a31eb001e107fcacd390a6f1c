@@ -1,0 +1,14 @@
+package day0326;
+
+abstract class Hello {
+	abstract public void study();
+}
+
+public class Ex10_AnonyInner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
