@@ -1,0 +1,16 @@
+package day0326;
+
+interface InterA {
+	int MAX = 10;
+	public void disp();
+	public void study();
+}
+
+public class Ex4_Interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

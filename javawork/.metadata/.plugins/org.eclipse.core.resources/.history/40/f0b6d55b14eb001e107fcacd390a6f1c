@@ -1,0 +1,21 @@
+package day0326;
+
+/*
+ * 인터페이스는 음식점의 메뉴판과 같다
+ * 구현 가능한 목록을 나열만하고 실체(body)가 없기 때문이다
+ * 상수와 추상메소드로만 구성되어 있다
+ */
+interface InterA {
+	int MAX = 10; // 상수지만 구분할 필요가 없으므로 final 생략함
+	public void disp(); // 추상메소드지만 구분할 필요가 없으므로 abstract 생략함
+	public void study();
+}
+
+public class Ex4_Interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
