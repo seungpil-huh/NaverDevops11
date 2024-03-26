@@ -2273,3 +2273,6 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.lsp4e 1 0 2024-03-26 09:44:35.694
 !MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
+
+!ENTRY org.eclipse.lsp4e 1 0 2024-03-26 12:12:38.545
+!MESSAGE [Info]	Registering request handler for workspace/didChangeWorkspaceFolders failed.
