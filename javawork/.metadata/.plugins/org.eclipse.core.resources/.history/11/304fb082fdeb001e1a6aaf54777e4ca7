@@ -1,0 +1,34 @@
+package day0327;
+
+public class MemberDto {
+	
+	private String name;
+	private String hp;
+	private String addr;
+	private String blood;
+	
+	
+
+	public MemberDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public MemberDto(String name, String hp, String addr, String blood) {
+		super();
+		this.name = name;
+		this.hp = hp;
+		this.addr = addr;
+		this.blood = blood;
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
