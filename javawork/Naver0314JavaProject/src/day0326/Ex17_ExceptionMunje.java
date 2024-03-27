@@ -13,8 +13,11 @@ public class Ex17_ExceptionMunje {
         int totalSum = 0;
         double average = 0.0;
         
-        try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
+        try {
+        	FileReader fr = new FileReader(FILENAME);
+        	BufferedReader br = new BufferedReader(fr);
             String line;
+            
             while ((line = br.readLine()) != null) {
                 try {
                     int score = Integer.parseInt(line);

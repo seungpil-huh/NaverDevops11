@@ -1,0 +1,16 @@
+package day0327;
+
+public class Ex1_Set {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Set 인터페이스를 구현한 클래스로는 TreeSet, HashSet 이 있다
+		 * Set 타입의 특징: 	1. 중복 데이터를 허용하지 않는다
+		 * 					2. 비순차적이다
+		 * 					3. TreeSet 은 오름차순으로 들어간다
+		 * 					4. HashSet 은 그냥 자기 마음대로 들어간다
+		 */
+	}
+
+}

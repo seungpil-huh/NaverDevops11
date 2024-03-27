@@ -1,0 +1,17 @@
+package day0327;
+
+import java.util.List;
+import java.util.Vector;
+
+public class Ex6_List {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> list1 = new Vector<String>();
+		List<String> list2 = new Vector<String>(5);
+		
+		System.out.println("list1 데이터 개수: " + list1.size());
+		System.out.println("list1 의 할당된 개수: " + ((Vector<String>)list1).capacity()); // capacity 는 오버라이드 메소드가 아니고 vector 가 갖고있는 메소드
+	}
+
+}
