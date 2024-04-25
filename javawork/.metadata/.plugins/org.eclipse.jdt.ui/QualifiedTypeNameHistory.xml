@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="day0326.OuterClass.InnerClass"/>
-    <fullyQualifiedTypeName name="day0326.OuterClass"/>
-    <fullyQualifiedTypeName name="day0326.OuterClass.InnerClass2"/>
-    <fullyQualifiedTypeName name="day0326.Kiwi"/>
-    <fullyQualifiedTypeName name="day0326.Hello"/>
-    <fullyQualifiedTypeName name="day0326.Happy"/>
-    <fullyQualifiedTypeName name="javax.management.remote.SubjectDelegationPermission"/>
-    <fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
-    <fullyQualifiedTypeName name="day0326.NewFrame"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.lang.Iterable"/>
     <fullyQualifiedTypeName name="java.util.TreeSet"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -31,13 +17,9 @@
     <fullyQualifiedTypeName name="day0327.MemberDto"/>
     <fullyQualifiedTypeName name="java.lang.VerifyError"/>
     <fullyQualifiedTypeName name="day0327.Ex9_VectorMunje"/>
-    <fullyQualifiedTypeName name="java.io.FileReader"/>
-    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.text.NumberFormat"/>
-    <fullyQualifiedTypeName name="java.io.FileWriter"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="day0327.StudentDto"/>
     <fullyQualifiedTypeName name="day0328.Ex1_Type"/>
     <fullyQualifiedTypeName name="day0328.GenericType"/>
@@ -54,10 +36,28 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="day0328.SwingGibon"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-    <fullyQualifiedTypeName name="java.awt.Color"/>
-    <fullyQualifiedTypeName name="javax.swing.JButton"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="day0328.Ex4_SwingButton"/>
-    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="day0328.Ex5_SwingCanvas.MyDraw"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
+    <fullyQualifiedTypeName name="java.awt.Toolkit"/>
+    <fullyQualifiedTypeName name="day0328.Ex6_SwingCanvasRadio"/>
+    <fullyQualifiedTypeName name="java.awt.Canvas"/>
+    <fullyQualifiedTypeName name="day0328.Ex6_SwingCanvasRadio.MyDraw"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
+    <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="day0328.Ex7_SwingFile"/>
+    <fullyQualifiedTypeName name="java.awt.FileDialog"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
 </qualifiedTypeNameHistroy>
