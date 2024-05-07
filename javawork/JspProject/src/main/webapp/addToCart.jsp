@@ -23,54 +23,38 @@
 </head>
 <body>
 <%
-session = request.getSession(true);
-ArrayList<ProductDetailDTO> cartList = (ArrayList<ProductDetailDTO>) session.getAttribute("cart");
-
-if (cartList == null) {
-    cartList = new ArrayList<ProductDetailDTO>();
-    session.setAttribute("cart", cartList);
-}
-
-int productId = Integer.parseInt(request.getParameter("productId"));
-ProductDetailDTO productToAdd = ProductDetailDAO.getProductById(productId);
-
-if (productToAdd != null && productToAdd.getQuantity() > 0) {
-    // 장바구니 객체 생성 및 추가
-    ProductDetailDTO cartProduct = new ProductDetailDTO();
-    
-    cartProduct.setId(productToAdd.getId());
-    cartProduct.setName(productToAdd.getName());
-    cartProduct.setPrice(productToAdd.getPrice());
-    cartProduct.setQuantity(1); // 수량을 1로 설정
-    cartProduct.setImagePath(productToAdd.getImagePath());
-    cartProduct.setDescription(productToAdd.getDescription());
-    
-    cartList.add(cartProduct);
-    session.setAttribute("cart", cartList);
-
-    // tb_item 테이블의 quantity 업데이트
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-
-    try {
-        conn = DBUtil.getConnection();
-        pstmt = conn.prepareStatement("UPDATE tb_item SET quantity = quantity - 1 WHERE id = ?");
-        pstmt.setInt(1, productId);
-        int affectedRows = pstmt.executeUpdate();
-        if (affectedRows > 0) {
-            out.println("제품이 장바구니에 추가되었습니다.");
-        } else {
-            out.println("제품 수량 갱신 실패.");
-        }
-    } catch (Exception e) {
-        out.println("데이터베이스 오류: " + e.getMessage());
-    } finally {
-        if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) {}
-        if (conn != null) try { conn.close(); } catch (SQLException ex) {}
-    }
-} else {
-    out.println("제품이 충분하지 않거나 장바구니에 추가하는 데 실패했습니다.");
-}
+	session = request.getSession(true);
+	ArrayList<ProductDetailDTO> cartList = (ArrayList<ProductDetailDTO>) session.getAttribute("cart");
+	
+	if (cartList == null) {
+	    cartList = new ArrayList<ProductDetailDTO>();
+	    session.setAttribute("cart", cartList);
+	}
+	
+	int productId = Integer.parseInt(request.getParameter("productId"));
+	ProductDetailDTO productToAdd = ProductDetailDAO.getProductById(productId);
+	
+	if (productToAdd != null && productToAdd.getQuantity() > 0) {
+	    // 장바구니 객체 생성 및 추가
+	    ProductDetailDTO cartProduct = new ProductDetailDTO();
+	    
+	    cartProduct.setId(productToAdd.getId());
+	    cartProduct.setName(productToAdd.getName());
+	    cartProduct.setPrice(productToAdd.getPrice());
+	    cartProduct.setQuantity(1); // 장바구니에 추가할 초기 수량
+	    cartProduct.setImagePath(productToAdd.getImagePath());
+	    cartProduct.setDescription(productToAdd.getDescription());
+	    
+	    cartList.add(cartProduct);
+	    session.setAttribute("cart", cartList);
+	    out.println("제품이 장바구니에 추가되었습니다.");
+	} else {
+	    if (productToAdd != null && productToAdd.getQuantity() <= 0) {
+	        out.println("재고가 부족하여 제품을 장바구니에 추가할 수 없습니다.");
+	    } else {
+	        out.println("제품 정보를 찾을 수 없습니다.");
+	    }
+	}
 %>
 </body>
 </html>

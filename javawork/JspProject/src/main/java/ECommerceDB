@@ -11,7 +11,8 @@ CREATE TABLE tb_user (
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    point INT DEFAULT 0
+    point DECIMAL(10, 2) NOT NULL,
+    nickname VARCHAR(50) UNIQUE
 );
 
 -- 상품 테이블 생성 (이미지 파일 경로 추가)
@@ -24,57 +25,6 @@ CREATE TABLE tb_item (
     image_path VARCHAR(255) DEFAULT NULL,  -- 이미지 파일 경로를 저장하는 필드 추가
     description TEXT,
     FOREIGN KEY (category_id) REFERENCES tb_category(id)
-);
-
--- 장바구니 테이블 생성
-CREATE TABLE tb_cart (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    item_id INT,
-    quantity INT,
-    create_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES tb_user(id),
-    FOREIGN KEY (item_id) REFERENCES tb_item(id)
-);
-
--- 주문 테이블 생성
-CREATE TABLE tb_orders (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    order_price DECIMAL(10, 2) NOT NULL,
-    create_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES tb_user(id)
-);
-
--- 주문 상세 테이블 생성
-CREATE TABLE tb_order_item (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT,
-    item_id INT,
-    quantity INT,
-    price DECIMAL(10, 2) NOT NULL,
-    status VARCHAR(20) DEFAULT 'Pending',
-    FOREIGN KEY (order_id) REFERENCES tb_orders(id),
-    FOREIGN KEY (item_id) REFERENCES tb_item(id)
-);
-
--- 결제 테이블 생성
-CREATE TABLE tb_payment (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    type VARCHAR(50) NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL,
-    point INT DEFAULT 0,
-    create_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES tb_user(id)
-);
-
--- 재고 테이블 생성
-CREATE TABLE tb_stock (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    item_id INT,
-    quantity INT,
-    FOREIGN KEY (item_id) REFERENCES tb_item(id)
 );
 
 -- 샘플 카테고리 데이터 삽입
@@ -90,8 +40,8 @@ INSERT INTO tb_category (name, description) VALUES
 ('스포츠/레저', '스포츠 및 야외 활동에 필요한 다양한 제품을 갖추고 있습니다.');
 
 -- 샘플 사용자 추가
-INSERT INTO tb_user (username, password, email, point) 
-VALUES ('user1', SHA2('password1', 256), 'user1@example.com', 10);
+INSERT INTO tb_user (username, password, email, point, nickname) 
+VALUES ('user1', SHA2('password1', 256), 'user1@example.com', 10000000, 'nickname1');
 
 -- 샘플 상품 추가 (이미지 경로 포함)
 INSERT INTO tb_item (category_id, name, price, quantity, image_path, description) 
@@ -130,23 +80,3 @@ VALUES (1, '강원 평창수 2L 24개', 29999, 150, './images/water.jpg', '소�
 	   (4, '메디안 치석케어 화이트 치약, 120g, 3개', 5260, 11322, './images/toothpaste.jpg', '유통기한: 2025-06-21 이거나 그 이후인 상품, 개당 용량: 120ml, 기능: 치석케어, 사용대상: 일반/성인, 용기형태: 튜브형'),
 	   (4, '버블버블 샤워볼, 아이보리, 1개입, 2개', 2870, 9, './images/showerball.jpg', '형태: 샤워볼, 구성: 단품세트'),
 	   (4, '코멧 홈 청소도구 후크 홀더, 4개', 5090, 652, './images/holder.jpg', '재질: ABS, 걸이 개수: 1개, 벽걸이/고리 고정방식: 접착형, 형태: U자형/후크형, 형태: 부착/접착형');
-
--- 샘플 장바구니 추가
-INSERT INTO tb_cart (user_id, item_id, quantity) 
-VALUES ((SELECT id FROM tb_user WHERE username = 'user1'), (SELECT id FROM tb_item WHERE name = '93 스트레이트 진'), 2);
-
--- 샘플 주문 추가
-INSERT INTO tb_orders (user_id, order_price) 
-VALUES ((SELECT id FROM tb_user WHERE username = 'user1'), 119.98);
-
--- 샘플 주문 상세 추가
-INSERT INTO tb_order_item (order_id, item_id, quantity, price, status) 
-VALUES ((SELECT id FROM tb_orders WHERE user_id = (SELECT id FROM tb_user WHERE username = 'user1')), (SELECT id FROM tb_item WHERE name = '93 스트레이트 진'), 2, 59.99, 'Completed');
-
--- 샘플 결제 추가
-INSERT INTO tb_payment (user_id, type, amount, point) 
-VALUES ((SELECT id FROM tb_user WHERE username = 'user1'), 'Credit Card', 119.98, 20);
-
--- 샘플 재고 추가
-INSERT INTO tb_stock (item_id, quantity) 
-VALUES ((SELECT id FROM tb_item WHERE name = '93 스트레이트 진'), 50);

@@ -37,21 +37,9 @@ if (cartList != null) {
             Connection conn = null;
             PreparedStatement pstmt = null;
             try {
-                conn = DBUtil.getConnection();
-                pstmt = conn.prepareStatement("UPDATE tb_item SET quantity = quantity + ? WHERE id = ?");
-                pstmt.setInt(1, item.getQuantity());
-                pstmt.setInt(2, itemId);
-                int affectedRows = pstmt.executeUpdate();
-                if (affectedRows > 0) {
-                    out.println("제품 수량 복원 완료.");
-                } else {
-                    out.println("제품 수량 복원 실패.");
-                }
+                out.println("제품이 장바구니에서 삭제되었습니다.");
             } catch (Exception e) {
                 out.println("데이터베이스 오류: " + e.getMessage());
-            } finally {
-                if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) {}
-                if (conn != null) try { conn.close(); } catch (SQLException ex) {}
             }
             break;
         }

@@ -20,7 +20,7 @@
             padding: 100px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin: 100px auto;
+            margin: 50px auto;
             max-width: 1000px;
         }
         h2, label {
@@ -76,6 +76,10 @@
                     <label>이메일:</label>
                     <input type="email" name="email" required class="form-control">
                 </div>
+                <div class="mb-3">
+    				<label>닉네임:</label>
+    				<input type="text" name="nickname" required class="form-control">
+				</div>
                 <div>
                     <button type="submit" class="btn btn-success">회원가입</button>
                 </div>
