@@ -57,6 +57,11 @@
 
 <script>
 function processPayment() {
+	if ($('.table tbody tr').length === 0) {
+        alert('결제할 상품이 없습니다.');
+        return;
+    }
+	
     $.ajax({
         url: 'processPayment.jsp',
         type: 'POST',

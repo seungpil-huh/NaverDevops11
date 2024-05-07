@@ -153,6 +153,10 @@
 <button class="btn btn-primary top-left-button" onclick="toggleUserInfo()">
     <i class="bi bi-person-fill"></i> 회원정보
 </button>
+<!-- 구매목록 버튼 추가 -->
+<button class="btn btn-primary top-left-button" style="left: 150px;" onclick="window.location.href='purchaseList.jsp'">
+    <i class="bi bi-cart-check-fill"></i> 구매목록
+</button>
 <div id="user-info" class="user-info">
     <% 
     session = request.getSession(false); // 세션이 존재하지 않으면 null 반환
