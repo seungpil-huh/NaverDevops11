@@ -18,6 +18,28 @@
     body *{
         font-family: 'Jua';
     }
+    table {
+	    width: 100%;
+	    border-collapse: collapse;
+	    margin: 20px 0;
+	}
+	th, td {
+	    padding: 15px;
+	    text-align: left;
+	    border-bottom: 1px solid #ddd;
+	}
+	tr:hover {background-color: #f5f5f5;}
+	.delete-item {
+	    color: white;
+	    background-color: red;
+	    border: none;
+	    border-radius: 5px;
+	    padding: 10px 20px;
+	    cursor: pointer;
+	}
+	.delete-item:hover {
+	    background-color: darkred;
+	}
 </style>
 </head>
 <body>

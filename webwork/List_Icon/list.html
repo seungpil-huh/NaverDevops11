@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /*  Colors option #1  */
+        --icon-color: #bbbbbb;
+        --selected-bg: #bfdbfe;
+        --selected-icon: #1e3a8a;
+
+        /*  Colors option #2  */
+        --icon-color: #bbbbbb;
+        --selected-bg: #2dd4bf;
+        --selected-icon: #ffffff;
+      }
+      body {
+        background-color: #eee;
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex-wrapper {
+        display: flex;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 9999px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+      }
+      .material-symbols-outlined {
+        font-family: "Material Icons Outlined";
+        font-size: 24px;
+        color: var(--icon-color);
+        padding: 16px;
+        border-radius: 9999px;
+        transition: color 0.2s, background-color 0.2s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .material-symbols-outlined:hover {
+        color: var(--selected-icon);
+        background-color: var(--selected-bg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-wrapper">
+      <span class="material-symbols-outlined"> home </span>
+      <span class="material-symbols-outlined"> person </span>
+      <span class="material-symbols-outlined"> add_circle </span>
+      <span class="material-symbols-outlined"> favorite </span>
+      <span class="material-symbols-outlined"> settings </span>
+    </div>
+  </body>
+</html>

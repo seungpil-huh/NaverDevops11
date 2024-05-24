@@ -19,6 +19,24 @@
         body *{
             font-family: 'Jua';
         }
+        table {
+		    width: 100%;
+		    border-collapse: collapse;
+		    margin: 20px 0;
+		}
+		th, td {
+		    padding: 15px;
+		    text-align: left;
+		    border-bottom: 1px solid #ddd;
+		}
+		.btn-danger {
+		    background-color: red;
+		    border: none;
+		    cursor: pointer;
+		}
+		.btn-danger:hover {
+		    background-color: darkred;
+		}
     </style>
 </head>
 <body>
