@@ -16,9 +16,22 @@
        body *{
            font-family: 'Jua';
        }
+       pre.info{
+       	font-size: 16px;
+       	border: 5px solid orange;
+       	padding: 10px 10px;
+       	border-radius: 40px;
+       	background-color: #ffe4e1;
+       }
    </style>
 </head>
 <body>
-info
+<pre class="info">
+	<i class="bi bi-shop-window"></i>&nbsp;비트캠프
+	<i class="bi bi-person-circle"></i>&nbsp;이름: 허승필
+	<i class="bi bi-phone-fill"></i>&nbsp;010-5392-8677
+	<i class="bi bi-cart4"></i>&nbsp;당일배송
+	<i class="bi bi-apple"></i>&nbsp;아이폰도 팔아요
+</pre>
 </body>
 </html>

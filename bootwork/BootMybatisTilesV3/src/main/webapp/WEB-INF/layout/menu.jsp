@@ -16,16 +16,53 @@
        body *{
            font-family: 'Jua';
        }
+       
+       ul.menu {
+       		list-style: none;
+       		margin-left: 100px;
+       }
+       
+       ul.menu li {
+       		float: left;
+       		width: 120px;
+       		font-size: 25px;
+       		border: 2px solid #00ced1;
+       		border-radius: 20px;
+       		text-align: center;
+       		margin-right: 10px;
+       		background-color: #afeeee;
+       }
+       
+       ul.menu li:hover {
+       		box-shadow: 5px 5px 5px gray;
+       		background-color: #2e8b57;
+       		color: white;
+       }
+       
+       ul.menu li a:hover {
+       		color: white;
+       }
+       
    </style>
 </head>
 <body>
 <c:set var="root" value="<%=request.getContextPath()%>"/>
-<a href="${root}/">홈</a>
-&nbsp;
-<a href="${root}/member/list">회원목록</a>
-&nbsp;
-<a href="${root}/board/list">게시판</a>
-&nbsp;
-<a href="${root}/guest/list">방명록</a>
+<ul class="menu">
+	<li>
+		<a href="${root}/">Home</a>
+	</li>
+	<li>
+		<a href="${root}/member/form">회원가입</a>
+	</li>
+	<li>
+		<a href="${root}/member/list">회원목록</a>
+	</li>
+	<li>
+		<a href="${root}/board/list">게시판</a>
+	</li>
+	<li>
+		<a href="${root}/guest/list">방명록</a>
+	</li>
+</ul>
 </body>
 </html>

@@ -16,9 +16,34 @@
        body *{
            font-family: 'Jua';
        }
+       
+       div.mainphoto img {
+       		width: 500px;
+       		width: 300px;
+       		height: 300px;
+       		border: 1px solid gray;
+       		margin: 10px;
+       }
+       
    </style>
 </head>
+
+<div class="mainphoto">
+  <marquee direction="left">
+	<img src="./image/mainImg.png">
+	<img src="./image/K-039.png">
+	<img src="./image/K-036.png">
+	<img src="./image/K-048.png">
+	<img src="./image/K-034.png">
+	<img src="./image/K-035.png">
+	<img src="./image/K-037.png">
+	<img src="./image/K-038.png">
+	<img src="./image/K-040.png">
+	<img src="./image/K-041.png">
+  </marquee>
+</div>
+
 <body>
-main
+
 </body>
 </html>
