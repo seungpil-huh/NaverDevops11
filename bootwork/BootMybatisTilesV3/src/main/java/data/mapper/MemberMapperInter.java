@@ -3,6 +3,7 @@ package data.mapper;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -26,11 +27,31 @@ public interface MemberMapperInter {
 	public void insertMember(MemberDto dto);
 	
 	@Select("select * from memberdb order by num desc")
-	public List<MemberDto> getAllmembers();
+	public List<MemberDto> getAllMembers();
 	
 	@Select("select * from memberdb where num=#{num}")
 	public MemberDto getData(int num);
 	
+	@Select("select * from memberdb where myid=#{myid}")
+	public MemberDto getDataById(String myid);
+	
 	@Update("update memberdb set photo=#{photo} where num=#{num}")
 	public void updatePhoto(Map<String, Object> map);
+	
+	@Update("""
+			update memberdb set name=#{name},hp=#{hp},email=#{email},
+		addr=#{addr},birthday=#{birthday} where num=#{num}
+			""")
+	public void updateMember(MemberDto dto);
+	
+	@Delete("delete from memberdb where num=#{num}")
+	public void deleteMember(int num);
+	
+	@Select("select count(*) from memberdb where num=#{num} and passwd=#{passwd}")
+	public int isEqualPassCheck(Map<String, Object> map);
+	
+	@Select("""
+			select count(*) from memberdb where myid=#{myid} and passwd=#{pass}
+			""")
+	public int isLoginCheck(String myid, String pass);
 }

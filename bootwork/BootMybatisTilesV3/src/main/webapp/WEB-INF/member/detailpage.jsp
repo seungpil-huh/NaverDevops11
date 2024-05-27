@@ -17,7 +17,6 @@
            font-family: 'Jua';
        }
    </style>
-   
    <script type="text/javascript">
    $(function(){
 	  //사진변경 이벤트
@@ -56,7 +55,8 @@
 	<tr>
 		<td width="200" align="center">
 			<img src="../save/${dto.photo}" id="photo"
-			class="rounded-circle" style="width:150px;border:1px solid black;" 
+			class="rounded-circle" 
+			style="width:150px;border:1px solid black;"
 			onerror="this.src='../image/noimage1.png'">
 			<br><br>
 			<input type="file" id="photoupload" style="display: none;">

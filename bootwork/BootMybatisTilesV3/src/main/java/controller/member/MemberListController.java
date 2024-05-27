@@ -19,10 +19,11 @@ public class MemberListController {
 	@NonNull
 	private MemberService memberService;
 	
-	@GetMapping({"/member/list"})
-	public String memberList(Model model) {
-		int totalCount = memberService.getTotalCount();
-		List<MemberDto> list = memberService.getAllmembers();
+	@GetMapping("/member/list")
+	public String memberList(Model model)
+	{
+		int totalCount=memberService.getTotalCount();
+		List<MemberDto> list=memberService.getAllMembers();		
 		
 		model.addAttribute("list", list);
 		model.addAttribute("totalCount", totalCount);
@@ -31,10 +32,11 @@ public class MemberListController {
 	}
 	
 	@GetMapping("/member/detail")
-	public String detail(@RequestParam int num, Model model) {
-		MemberDto dto = memberService.getData(num);
+	public String detail(@RequestParam int num,Model model)
+	{
+		MemberDto dto=memberService.getData(num);
 		model.addAttribute("dto", dto);
-		
 		return "member/detailpage";
 	}
+
 }
