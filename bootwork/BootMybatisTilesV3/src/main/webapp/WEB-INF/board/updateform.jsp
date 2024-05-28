@@ -53,30 +53,28 @@
     </script>
 </c:if>
 <body>
-<form action="./insert" method="post" enctype="multipart/form-data">
-    <!-- 5개 hidden -->
-    <input type="hidden" name="num" value="${num}">
-    <input type="hidden" name="regroup" value="${regroup}">
-    <input type="hidden" name="restep" value="${restep}">
-    <input type="hidden" name="relevel" value="${relevel}">
+<form action="./update" method="post" enctype="multipart/form-data">
+    <!-- 2개 hidden -->
+    <input type="hidden" name="num" value="${dto.num}">
     <input type="hidden" name="currentPage" value="${currentPage}">
 
     <table  class="table table-bordered" style="width: 400px;">
         <caption align="top">
-            <h4><b>${num==0?"새글쓰기":"답글쓰기"}</b></h4>
+            <h4><b>글수정</b></h4>
         </caption>
         <tr>
             <th width="100" class="table-warning">제목</th>
             <td>
                 <input type="text" name="subject" required="required"
-                       value="${subject}" class="form-control">
+                       value="${dto.subject}" class="form-control">
             </td>
         </tr>
         <tr>
             <th width="100" class="table-warning">사진</th>
             <td>
-                <img src="" id="showimg"
+                <img src="../save/${dto.uploadphoto}" id="showimg"
                      onerror="this.src='../image/noimage2.png'">
+                <b>사진을 선택하지 않으면 기존사진이 유지됩니다</b><br>
                 <input type="file" name="upload" id="upload" class="form-control">
             </td>
         </tr>
@@ -84,13 +82,13 @@
             <td colspan="2">
 				<textarea name="content" required="required"
                           style="width: 100%;height: 150px;"
-                          placeholder="내용을 입력하세요"></textarea>
+                          placeholder="내용을 입력하세요">${dto.content}</textarea>
             </td>
         </tr>
         <tr>
             <td colspan="2" align="center">
                 <button type="submit" class="btn btn-secondary"
-                        style="width: 100px;">글저장</button>
+                        style="width: 100px;">글수정</button>
 
                 <button type="button" class="btn btn-secondary"
                         style="width: 100px;"
