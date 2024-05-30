@@ -43,10 +43,7 @@ public class BoardDetailDeleteController {
     }
 
     @GetMapping("/delete")
-    public String delete(
-            @RequestParam int num,
-            @RequestParam int currentPage
-    )
+    public String delete(@RequestParam int num,@RequestParam int currentPage)
     {
         boardService.deleteBoard(num);
 

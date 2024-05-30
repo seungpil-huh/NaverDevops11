@@ -1,0 +1,49 @@
+create table memberdb (
+    num smallint auto_increment primary key,
+    name varchar(20),
+    myid varchar(20),
+    passwd varchar(20),
+    addr varchar(200),
+    hp varchar(20),
+    email varchar(30),
+    photo varchar(200),
+    birthday varchar(20),
+    gaipday datetime);
+
+create table reboard (
+	num smallint auto_increment primary key,
+	writer varchar(20),
+	myid varchar(20),
+	subject varchar(300),
+	uploadphoto varchar(100),
+	content varchar(2000),
+	readcount smallint default 0,
+	regroup smallint,
+	restep smallint,
+	relevel smallint,
+	writeday datetime);
+
+
+//댓글 db
+create table boardanswer (
+   aidx smallint auto_increment primary key,
+   num smallint,
+   writer varchar(20),
+   myid varchar(20),
+   content varchar(1000),
+   writeday datetime,
+   foreign key(num) references reboard(num) on delete cascade);
+
+-- guest table
+create table guestdb (
+     guestidx smallint auto_increment primary key,
+     writer varchar(20),
+     myid varchar(20),
+     gcontent varchar(2000),
+     writeday datetime);
+
+create table guestphoto (
+    photoidx smallint auto_increment primary key,
+    guestidx smallint,
+    photoname varchar(100),
+    foreign key(guestidx) references guestdb(guestidx) on delete cascade);
