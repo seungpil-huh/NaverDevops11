@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학생 마이페이지</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Square&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #3b5998;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #fff;
+        padding: 20px;
+        position: fixed;
+        height: 100%;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .main-content {
+        margin-left: 270px;
+        padding: 20px;
+      }
+      .card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      .button {
+        background-color: #3b5998;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">로고</div>
+      <div class="nav">
+        <a href="#" style="color: white; margin-right: 20px">홈</a>
+        <a href="#" style="color: white; margin-right: 20px">마이페이지</a>
+        <a href="#" style="color: white">로그아웃</a>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="profile">
+        <img
+          src="profile.jpg"
+          alt="프로필 사진"
+          style="width: 100px; height: 100px; border-radius: 50%"
+        />
+        <h2>홍길동</h2>
+        <p>레벨: 5</p>
+      </div>
+      <div class="menu">
+        <p><a href="#">내가 올린 글</a></p>
+        <p><a href="#">찜 목록</a></p>
+        <p><a href="#">출석현황</a></p>
+        <p><a href="#">정보수정</a></p>
+        <p><a href="#">로그아웃</a></p>
+      </div>
+    </div>
+    <div class="main-content">
+      <h1>내가 올린 글</h1>
+      <div class="card">
+        <h2>글 제목 1</h2>
+        <p>작성일자: 2024-06-12</p>
+        <p>조회수: 123 | 좋아요: 45 | 댓글: 6</p>
+      </div>
+      <div class="card">
+        <h2>글 제목 2</h2>
+        <p>작성일자: 2024-06-10</p>
+        <p>조회수: 98 | 좋아요: 30 | 댓글: 2</p>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </body>
+</html>
