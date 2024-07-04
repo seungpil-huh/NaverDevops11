@@ -13,27 +13,88 @@
       font-family: 'Jua';
     }
   </style>
+  <script type="text/javascript">
+    $(function(){
+      list();//로딩시 댓글 출력
+    });
+
+    function list()
+    {
+      let num=[[${dto.num}]];
+      $.ajax({
+        type:"get",
+        dataType:"json",
+        url:"./commentlist",
+        data:{"num":num},
+        success:function(data){
+          let s=`댓글 &nbsp;${data.length}개`;
+          $.each(data,function(idx,item){
+            s+=
+                    `
+				  <div style="margin-left:20px;">
+					  ${item.comment}
+					  <span style="color:gray;font-size:0.9em;">${item.writeday}</span>
+				  </div>
+				  `;
+          });
+          $(".comment-list").html(s);
+        }
+      });
+    }
+  </script>
 </head>
 <body>
 <h1>상세보기</h1>
-<h3>자동차명: [[${dto.carname}]]</h3>
+<h3>자동차명 : [[${dto.carname}]]</h3>
 <button type="button" class="btn btn-outline-secondary btn-sm"
         onclick="location.href='./list'">목록</button>
 <button type="button" class="btn btn-outline-secondary btn-sm"
-        onclick="location.href='./form'">자동차 추가</button>
+        onclick="location.href='./form'">자동차추가</button>
 <button type="button" class="btn btn-outline-secondary btn-sm"
-        th:onclick="|location.href='@{./delete(num=${dto.num})}'|">상품 삭제</button>
+        th:onclick="|location.href='@{./delete(num=${dto.num})}'|">상품삭제</button>
 <button type="button" class="btn btn-outline-secondary btn-sm"
-        th:onclick="|location.href='@{./carupdate(num=${dto.num})}'|">상품 수정</button>
+        th:onclick="|location.href='@{./carupdate(num=${dto.num})}'|">상품수정</button>
+<br><br>
 <div th:object="${dto}">
-  <img th:src="@{'https://kr.object.ncloudstorage.com/bitcamp-bucket-91/mycar/' + *{carphoto}}"
-  style="max-width: 400px; border: 5px solid darkorchid;">
+  <img th:src="@{'https://kr.object.ncloudstorage.com/bitcamp-bucket-91/mycar/'+*{carphoto}}"
+       style="max-width: 400px;border: 5px solid pink;">
   <br><br>
-  <h4>가 격: [[*{carprice}]]만원</h4>
-  <h4>색 상: <span th:style="'background-color:' + *{carcolor}">[[*{carcolor}]]</span></h4>
-  <h3>구입일: [[*{carguip}]]</h3>
-  <h3>등록날짜:
-  <span th:text="${#calendars.format(dto.writeday, 'yyyy-MM-dd HH:mm')}"></span></h3>
+  <h4>가 격 : [[*{carprice}]]만원</h4>
+  <h4>색 상 : <span th:style="'background-color:'+*{carcolor}">[[*{carcolor}]]</span></h4>
+  <h3>구입일 : [[*{carguip}]]</h3>
+  <h3>등록날짜 :
+    <span th:text="${#calendars.format(dto.writeday,'yyyy-MM-dd HH:mm')}"></span></h3>
 </div>
+<!--댓글부분 여기부터 추가 -->
+<hr>
+<div class="comment-list" style="margin-left:10px;color:blue;">
+  코맨트 목록
+</div>
+<div class="input-group" style="width:400px;">
+  <h5>댓글</h5>
+  <input type="text" class="form-control" id="comment"
+         style="margin-left: 10px;border:1px solid black;">
+  <button type="button" class="btn btn-success btn-sm"
+          id="btncomment">저장</button>
+</div>
+<script type="text/javascript">
+  //댓글 추가 이벤트
+  $("#btncomment").click(function(){
+    let num=[[${dto.num}]];
+    let comment=$("#comment").val();
+    if(comment=='')
+      return;
+
+    $.ajax({
+      type:"get",
+      dataType:"text",
+      url:"./addcomment",
+      data:{"num":num,"comment":comment},
+      success:function(){
+        list();
+        $("#comment").val("");
+      }
+    });
+  });
+</script>
 </body>
-</html>

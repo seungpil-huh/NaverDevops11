@@ -23,11 +23,12 @@ import naver.storage.NcpObjectStorageService;
 @Controller
 @RequiredArgsConstructor
 public class MycarController {
+
     private final MyCarDao myCarDao;
     private final NcpObjectStorageService storageService;
 
     //bucket 명
-    String bucketName="bitcamp-bucket-56";
+    String bucketName="bitcamp-bucket-91";
     //업로드할 폴더명
     String folderName="mycar";
 
