@@ -38,13 +38,16 @@
     </tr>
     <!-- 데이타 반복문 -->
     <tr th:each="dto,iter:${list}">
+        <!-- iter: 숫자 넣을 때만 입력 -->
         <td>[[${iter.count}]]</td>
         <td>
-            <!-- 썸네일 이미지 넣기(40x40) -->
-            <img th:src="@{https://lm6c6d0u3714.edge.naverncp.com/i3dUJJyvi0/mycar/{photo}?type=f&w=40&h=40&faceopt=true&ttype=jpg(photo=${dto.carphoto})}"
-                 hspace="10" border="1">
+            <a th:href="@{./detail(num=${dto.num})}" style="cursor: pointer; color: black; text-decoration: none;">
+                <!-- 썸네일 이미지 넣기(40x40) -->
+                <img th:src="@{https://lm6c6d0u3714.edge.naverncp.com/i3dUJJyvi0/mycar/{photo}?type=f&w=40&h=40&faceopt=true&ttype=jpg(photo=${dto.carphoto})}"
+                     hspace="10" border="1">
 
-            [[${dto.carname}]]
+                [[${dto.carname}]]
+            </a>
         </td>
         <td align="right">
             <span th:text="${#numbers.formatInteger(dto.carprice,0,'COMMA')}"></span>
@@ -55,5 +58,9 @@
         <td>[[${dto.carguip}]]</td>
     </tr>
 </table>
+<div th:if="${pageSize<totalCount}">
+    <button type="button" class="btn btn-sm btn-danger"
+            th:onclick="|location.href='@{./list(more=2)}'|">More</button>
+</div>
 </body>
 </html>
