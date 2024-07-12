@@ -17,7 +17,7 @@ const EightApp = () => {
             <table className='table table-bordered'>
                 <thead>
                     <tr>
-                        <th>번호</th>
+                        <th style={{width:'50px', alignContent:'center'}}>번호</th>
                         <th>사진</th>
                         <th>이름</th>
                         <th>나이</th>
@@ -34,7 +34,7 @@ const EightApp = () => {
                                     className='smallphoto'/>
                                 </td>
                                 <td>{item.pname}</td>
-                                <td>{item.age}</td>
+                                <td>{item.age}세</td>
                                 <td>{item.addr}</td>
                             </tr>)
                     }
