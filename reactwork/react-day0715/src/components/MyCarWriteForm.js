@@ -9,7 +9,7 @@ const MyCarWriteForm = ({onSave}) => {
     const [carguip,setCarguip]=useState('');
     const [carphoto,setCarphoto]=useState('');
 
-    const photopath="https://kr.object.ncloudstorage.com/bitcamp-bucket-91/mycar";//스토리지 주소
+    const photopath="https://kr.object.ncloudstorage.com/bitcamp-bucket-91/mycar"; //스토리지 주소
 
     //파일 업로드 이벤트
     const photoUploadEvent=(e)=>{

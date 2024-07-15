@@ -28,4 +28,9 @@ public class MyCarDao {
     public MycarDto getData(Long num) {
         return myCarDaoInter.getReferenceById(num);
     }
+
+    // 수정 - 구입일, 사진, 등록일 제외 수정
+    public void updateMycar(MycarDto dto) {
+        myCarDaoInter.save(dto);
+    }
 }

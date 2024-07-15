@@ -15,7 +15,7 @@ const MyCarList = () => {
         });
     }
 
-    //처음 시작시 목록 가져오기-한번만 호출
+    //처음 시작시 목록 가져오기 - 한번만 호출
     useEffect(()=>{
         myCarList();
     },[]);
@@ -30,14 +30,22 @@ const MyCarList = () => {
         });
     }
 
-    const deleteMyCar = (num) => {
+    const deleteMyCar=(num)=>{
         Axios.delete("/mycar/delete?num="+num)
         .then(res=>{
-            // 삭제 후 목록 다시 출력
+            //삭제후 목록 다시 출력
             myCarList();
         })
     }
 
+    //수정
+    const updateMycar=(data)=>{
+        Axios.post("/mycar/update",data)
+        .then(res=>{
+            //수정 성공후 목록 다시 출력
+            myCarList();
+        })
+    }
     return (
         <div>
             <Button variant='contained' color='info'
@@ -64,7 +72,8 @@ const MyCarList = () => {
                 <tbody>
                 {
                     list.map((row,idx)=>
-                      <MyCarRowItem key={idx} idx={idx} row={row} onDelete={deleteMyCar}/>)
+                      <MyCarRowItem key={idx} idx={idx} row={row}
+                     onDelete={deleteMyCar} onUpdate={updateMycar}/>)
                 }
                 </tbody>
             </table>

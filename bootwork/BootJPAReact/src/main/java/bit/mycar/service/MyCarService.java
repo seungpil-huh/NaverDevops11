@@ -28,4 +28,8 @@ public class MyCarService {
     public MycarDto getData(Long num) {
         return myCarDao.getData(num);
     }
+
+    public void updateMycar(MycarDto dto) {
+        myCarDao.updateMycar(dto);
+    }
 }
