@@ -1,15 +1,23 @@
 package bit.mycar.data;
 
+import java.sql.Timestamp;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "mycar") //테이블명
@@ -17,7 +25,7 @@ import java.sql.Timestamp;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //오류날경우 추가,불필요한 직렬화를 막기위한 어노테이션
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //오류날경우 추가,불필요한 직렬화를 막기위한 어노테이션
 public class MycarDto {
     @Id  //각 엔터티를 구별할수 있도록 식별 아이디를 갖도록 설계
     @GeneratedValue(strategy = GenerationType.IDENTITY)
